@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Secret Message</title>
+  <title>Random Respawn Button</title>
   <style>
-    .message {
-      display: none;
-      margin-top: 10px;
-      padding: 10px;
-      background-color: lightgray;
-      border: 1px solid gray;
+    #myButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 10px 20px;
+      background-color: lightblue;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
   <script>
-    function displayMessage() {
-      var message = document.getElementById("message");
-      message.style.display = "block";
+    function respawnButton() {
+      var button = document.getElementById("myButton");
+      var windowWidth = window.innerWidth;
+      var windowHeight = window.innerHeight;
+      var buttonWidth = button.offsetWidth;
+      var buttonHeight = button.offsetHeight;
+      var maxX = windowWidth - buttonWidth;
+      var maxY = windowHeight - buttonHeight;
+      var randomX = Math.floor(Math.random() * maxX);
+      var randomY = Math.floor(Math.random() * maxY);
+      button.style.left = randomX + "px";
+      button.style.top = randomY + "px";
     }
   </script>
 </head>
 <body>
-  <h1>Secret Message for Cielo</h1>
-  <button onclick="displayMessage()">Click me!</button>
-  <div id="message" class="message">
-    <p>Loveyou loveloveeee</p>
-  </div>
+  <h1>Random Respawn Button</h1>
+  <button id="myButton" onclick="respawnButton()">Click me!</button>
 </body>
 </html>
