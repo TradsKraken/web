@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secret Message</title>
+  <style>
+    .message {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: lightgray;
+      border: 1px solid gray;
+    }
+  </style>
+  <script>
+    function displayMessage() {
+      var message = document.getElementById("message");
+      message.style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <h1>Secret Message</h1>
+  <button onclick="displayMessage()">Click me!</button>
+  <div id="message" class="message">
+    <p>Loveyou loveloveeee</p>
+  </div>
+</body>
+</html>
